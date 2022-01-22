@@ -21,7 +21,7 @@
     </h2>
     <div class="country-details">
       <ul>
-        <li class="c-ellipsis flex-ellipsis">
+        <li class="flex-ellipsis">
           <strong>native name: </strong>
           <span>{{ deepInObj(country.name?.nativeName) }}</span>
         </li>
@@ -54,6 +54,19 @@
         <li>
           <strong>languages: </strong>
           <span>{{ deepInObj(country.languages) }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="borders">
+      <h3>
+        <strong>Border Countries:</strong>
+      </h3>
+      <ul>
+        <li
+          [routerLink]="['/country', border]"
+          *ngFor="let border of country.borders"
+        >
+          {{ border }}
         </li>
       </ul>
     </div>

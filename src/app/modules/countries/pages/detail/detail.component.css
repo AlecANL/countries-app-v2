@@ -12,13 +12,12 @@ bg-white
 }
 
 .country-details {
-  @apply flex
-  flex-col
-  gap-8
+  @apply grid
+  gap-y-8
   mt-4
   md:text-xl
-  lg:grid
-  lg:grid-cols-2;
+  lg:grid-cols-2
+  lg:gap-x-10;
 }
 
 .title {
@@ -39,7 +38,38 @@ bg-white
 
 .country {
   @apply grid
+  gap-y-11
   place-items-center
   lg:grid-cols-2
   lg:place-items-stretch;
+}
+
+.flex-ellipsis {
+  @apply md:text-ellipsis
+  md:whitespace-nowrap
+  md:overflow-hidden;
+}
+
+.borders {
+  @apply lg:flex
+  items-center
+  gap-4;
+}
+
+.borders h3 {
+  @apply md:text-xl;
+}
+.borders ul {
+  @apply flex
+  gap-3
+  flex-wrap
+  py-4;
+}
+
+.borders li {
+  @apply py-2
+  px-7
+  cursor-pointer
+  rounded-sm;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
 }
