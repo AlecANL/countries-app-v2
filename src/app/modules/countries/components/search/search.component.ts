@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
 })
-export class SearchComponent {}
+export class SearchComponent {
+  @Input() placeholder: string = '';
+  @Input() ariaLabel: string = '';
+}

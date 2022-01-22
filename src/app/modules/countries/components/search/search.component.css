@@ -1,0 +1,20 @@
+.form {
+  @apply flex
+  gap-6
+  items-center
+  bg-white
+  text-gray
+  rounded-md
+  px-8
+  py-3
+  max-w-[30rem]
+  md:flex-1;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+}
+input {
+  @apply w-full;
+}
+
+.form i {
+  @apply font-bold;
+}

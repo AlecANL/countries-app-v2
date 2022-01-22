@@ -1,0 +1,32 @@
+.dropdown {
+  @apply relative
+  max-w-[12.5rem];
+}
+
+.dropdown-button {
+  @apply flex
+  items-center
+  justify-between
+  gap-4
+  w-full;
+}
+
+.dropdown-button,
+.dropdown-options {
+  @apply bg-white
+  rounded-md
+  py-3
+  px-6
+  cursor-pointer;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+}
+
+.dropdown-options {
+  @apply absolute
+  inset-x-0
+  mt-1;
+}
+
+.dropdown-options li {
+  @apply py-1;
+}

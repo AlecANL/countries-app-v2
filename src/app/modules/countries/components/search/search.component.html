@@ -1,8 +1,10 @@
-<form>
+<form class="form" autocomplete="off">
+  <i class="icon-search"></i>
   <input
     type="search"
     name="search"
     id="search"
-    aria-label="search any country in the world"
+    attr.aria-label="{{ ariaLabel }}"
+    [placeholder]="placeholder"
   />
 </form>

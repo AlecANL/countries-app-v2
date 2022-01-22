@@ -18,3 +18,9 @@
   @apply flex
   justify-between;
 }
+
+.switch {
+  @apply flex
+  gap-2
+  items-center;
+}

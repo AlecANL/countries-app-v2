@@ -1,0 +1,9 @@
+.filter-section {
+  @apply flex
+  flex-col
+  gap-10
+  mb-8
+  mt-6
+  md:flex-row
+  md:justify-between;
+}

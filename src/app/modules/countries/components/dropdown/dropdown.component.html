@@ -1,12 +1,14 @@
 <div class="dropdown">
-  <div class="dropdown-button">
+  <button (click)="toggle()" class="dropdown-button">
     <span>filter by region</span>
-  </div>
-  <ul class="dropdown-options">
-    <li>africa</li>
-    <li>america</li>
-    <li>asia</li>
-    <li>europe</li>
-    <li>oceania</li>
+    <i class="icon-arrow-down"></i>
+  </button>
+  <ul *ngIf="isOpen" class="dropdown-options">
+    <li
+      (click)="handleFilterCountry(country)"
+      *ngFor="let country of countries"
+    >
+      {{ country }}
+    </li>
   </ul>
 </div>
