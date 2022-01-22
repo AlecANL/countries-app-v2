@@ -1,0 +1,20 @@
+.header {
+  @apply py-7
+  px-4
+  bg-white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+}
+
+.header h1 {
+  @apply text-sm
+  font-bold;
+}
+.header button {
+  @apply text-xs
+  font-semibold;
+}
+
+.header-content {
+  @apply flex
+  justify-between;
+}
