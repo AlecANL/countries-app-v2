@@ -9,3 +9,12 @@
 body {
   @apply bg-light-bg font-nunito;
 }
+.c-ellipsis {
+  @apply text-ellipsis
+  whitespace-nowrap
+  overflow-hidden;
+}
+
+/* .flex-ellipsis {
+  @apply min-w-[.625rem];
+} */

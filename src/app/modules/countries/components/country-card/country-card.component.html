@@ -1,0 +1,24 @@
+<article class="country-card" [routerLink]="['/country', country.cca2]">
+  <div class="cover">
+    <img [src]="country.flags.svg" [alt]="country.name.common + 'flag'" />
+  </div>
+  <div class="description">
+    <h3 class="c-ellipsis title" [title]="country.name.common">
+      {{ country.name.common }}
+    </h3>
+    <div class="country-detail">
+      <p class="c-ellipsis" [title]="'population: ' + country.population">
+        <strong> 👪 population: </strong>
+        <span>{{ country.population | number }} </span>
+      </p>
+      <p class="c-ellipsis" [title]="'region: ' + country.region">
+        <strong> 📍 region: </strong>
+        <span>{{ country.region }} </span>
+      </p>
+      <p class="c-ellipsis" [title]="'capital: ' + country.capital">
+        <strong> 🏛️ capital: </strong>
+        <span>{{ country.capital || "No capital found" }} </span>
+      </p>
+    </div>
+  </div>
+</article>

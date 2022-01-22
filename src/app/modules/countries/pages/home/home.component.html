@@ -6,3 +6,10 @@
   ></search>
   <dropdown></dropdown>
 </div>
+
+<div class="countries-grid">
+  <country-card
+    *ngFor="let country of countries"
+    [country]="country"
+  ></country-card>
+</div>

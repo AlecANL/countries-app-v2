@@ -1,0 +1,61 @@
+<button [routerLink]="['']" class="btn">
+  <i class="icon-arrow-left"></i>
+  <span>Back</span>
+</button>
+
+<section *ngIf="isLoading && isError">
+  <h1>Whoops. cannot get country</h1>
+</section>
+
+<section *ngIf="isLoading && !isError">
+  <h1>Loading...</h1>
+</section>
+
+<section *ngIf="!isLoading && !isError && country" class="country">
+  <div class="cover">
+    <img [src]="country.flags?.svg" alt="" />
+  </div>
+  <div class="description">
+    <h2 class="title">
+      {{ country.name?.common }}
+    </h2>
+    <div class="country-details">
+      <ul>
+        <li class="c-ellipsis flex-ellipsis">
+          <strong>native name: </strong>
+          <span>{{ deepInObj(country.name?.nativeName) }}</span>
+        </li>
+        <li>
+          <strong>population: </strong>
+          <span>{{ country.population }}</span>
+        </li>
+        <li>
+          <strong>region: </strong>
+          <span>{{ country.region }}</span>
+        </li>
+        <li>
+          <strong>sub region: </strong>
+          <span>{{ country.subregion }}</span>
+        </li>
+        <li>
+          <strong>capital: </strong>
+          <span>{{ country.capital }}</span>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <strong>top level domain </strong>
+          <span>{{ country.tld ? country.tld[0] : "not find" }}</span>
+        </li>
+        <li>
+          <strong>currencies: </strong>
+          <span>{{ deepInObj(country.currencies) }}</span>
+        </li>
+        <li>
+          <strong>languages: </strong>
+          <span>{{ deepInObj(country.languages) }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

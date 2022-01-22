@@ -1,0 +1,45 @@
+.btn {
+  @apply flex
+  items-center
+  gap-2
+  py-2 px-6
+bg-white
+  rounded-md
+  active:scale-95
+  mt-10
+  mb-16;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
+}
+
+.country-details {
+  @apply flex
+  flex-col
+  gap-8
+  mt-4
+  md:text-xl
+  lg:grid
+  lg:grid-cols-2;
+}
+
+.title {
+  @apply text-xl
+  md:text-4xl
+  font-extrabold;
+}
+
+.cover {
+  @apply max-w-[35rem];
+}
+
+.cover img {
+  @apply object-cover
+  w-full
+  h-full;
+}
+
+.country {
+  @apply grid
+  place-items-center
+  lg:grid-cols-2
+  lg:place-items-stretch;
+}
