@@ -15,37 +15,41 @@ body {
   overflow-hidden;
 }
 
-body .dark {
-  @apply bg-light-bg dark:bg-charade;
+/* Dark Mode*/
+.dark-theme header.header {
+  @apply dark:bg-tuna
+  transition-all
+  text-white;
 }
 
-.dark button.dropdown-button {
-  @apply dark:bg-tuna text-white;
+.dark-theme button.dropdown-button,
+.dark-theme ul.dropdown-options {
+  @apply dark:bg-tuna
+  text-white;
 }
 
-.dark ul.dropdown-options {
-  @apply dark:bg-tuna text-white;
+.dark-theme form.form {
+  @apply bg-tuna
+  text-white;
 }
 
-.dark article.country-card {
-  @apply dark:bg-tuna text-white;
+.dark-theme input.search-box {
+  @apply dark:text-white
+  placeholder:text-white;
 }
 
-.dark form.form {
-  @apply dark:bg-tuna text-white;
+.dark-theme article.country-card {
+  @apply dark:bg-tuna
+  text-white;
 }
 
-.dark from.form input {
-  @apply dark:bg-tuna text-white placeholder:text-white;
+.dark-theme button.btn {
+  @apply dark:bg-tuna
+  text-white;
 }
 
-.dark button.btn {
-  @apply dark:bg-tuna text-white;
+.dark-theme li.item {
+  @apply dark:bg-tuna
+  text-white;
 }
-
-.dark section.country {
-  @apply min-h-[28.125rem]
-  lg:overflow-hidden
-  dark:text-white
-  lg:pb-[122px];
-}
+/* Dark Mode*/

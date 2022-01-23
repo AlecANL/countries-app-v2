@@ -9,6 +9,7 @@ import { SearchComponent } from './components/search/search.component';
 import { HomePageComponent } from './pages/home/home.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { FormsModule } from '@angular/forms';
+import { UndefinedProps } from '@core/pipes/undefined-prop.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     HomePageComponent,
     CountryCardComponent,
     DetailComponent,
+    UndefinedProps,
   ],
   exports: [],
   imports: [CommonModule, RouterModule, FormsModule],

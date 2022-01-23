@@ -1,10 +1,10 @@
-<article class="country-card" [routerLink]="['/country', country.cca2]">
+<article class="country-card" [routerLink]="['country', country.cca2]">
   <div class="cover">
     <img [src]="country.flags.svg" [alt]="country.name.common + 'flag'" />
   </div>
   <div class="description">
     <h3 class="c-ellipsis title" [title]="country.name.common">
-      {{ country.name.common }}
+      {{ country.name.common | undefinedProps: "name not found" }}
     </h3>
     <div class="country-detail">
       <p class="c-ellipsis" [title]="'population: ' + country.population">
@@ -13,11 +13,13 @@
       </p>
       <p class="c-ellipsis" [title]="'region: ' + country.region">
         <strong> 📍 region: </strong>
-        <span>{{ country.region }} </span>
+        <span>{{ country.region | undefinedProps: "country not found" }} </span>
       </p>
       <p class="c-ellipsis" [title]="'capital: ' + country.capital">
         <strong> 🏛️ capital: </strong>
-        <span>{{ country.capital || "No capital found" }} </span>
+        <span
+          >{{ country.capital | undefinedProps: "capital not found" }}
+        </span>
       </p>
     </div>
   </div>

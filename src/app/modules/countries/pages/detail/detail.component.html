@@ -33,21 +33,25 @@
         </li>
         <li>
           <strong>region: </strong>
-          <span>{{ country.region }}</span>
+          <span>{{ country.region | undefinedProps: "region not found" }}</span>
         </li>
         <li>
           <strong>sub region: </strong>
-          <span>{{ country.subregion }}</span>
+          <span>{{
+            country.subregion | undefinedProps: "subregion not found"
+          }}</span>
         </li>
         <li>
           <strong>capital: </strong>
-          <span>{{ country.capital }}</span>
+          <span>{{
+            country.capital | undefinedProps: "capital not found"
+          }}</span>
         </li>
       </ul>
       <ul>
         <li>
           <strong>top level domain </strong>
-          <span>{{ country.tld ? country.tld[0] : "not find" }}</span>
+          <span>{{ country.tld | undefinedProps: "Not found" }}</span>
         </li>
         <li>
           <strong>currencies: </strong>
@@ -59,12 +63,13 @@
         </li>
       </ul>
     </div>
-    <div class="borders">
+    <div *ngIf="country.borders!.length > 0" class="borders">
       <h3>
         <strong>Border Countries:</strong>
       </h3>
       <ul>
         <li
+          class="item"
           [routerLink]="['/country', border]"
           *ngFor="let border of country.borders"
         >

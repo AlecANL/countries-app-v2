@@ -1,7 +1,8 @@
 .header {
   @apply py-7
-  px-4
-  bg-white;
+  bg-white
+  text-bunker
+  px-4;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
 }
 
@@ -25,9 +26,4 @@
   @apply flex
   gap-2
   items-center;
-}
-
-.header.dark {
-  @apply dark:bg-tuna
-  dark:text-white transition-all;
 }

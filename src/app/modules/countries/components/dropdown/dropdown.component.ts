@@ -36,6 +36,5 @@ export class DropDownComponent {
     this._state = { ...this._state, isOpen: false };
     const value = country.toLowerCase().trim();
     this.onSearchByRegion.emit(value);
-    console.log(country);
   }
 }

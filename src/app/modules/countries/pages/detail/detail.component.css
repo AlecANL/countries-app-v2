@@ -42,7 +42,7 @@ bg-white
 .country {
   @apply grid
   gap-y-11
-  place-items-center
+  sm:place-items-center
   lg:grid-cols-2
   lg:place-items-stretch;
 }

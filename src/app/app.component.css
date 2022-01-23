@@ -1,3 +1,17 @@
 .app {
   @apply px-4;
 }
+
+.light-theme {
+  @apply bg-light-bg;
+}
+
+.theme {
+  @apply min-h-screen
+  transition-all;
+}
+
+.dark-theme {
+  @apply bg-charade
+  text-white;
+}

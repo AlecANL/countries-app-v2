@@ -9,4 +9,11 @@ import { ICountry } from '@core/models/country.interface';
 })
 export class CountryCardComponent {
   @Input() country!: ICountry;
+
+  handleUndefinedProperties(prop: string | string[], message: string) {
+    if (Array.isArray(prop)) {
+      return prop.length > 0 ? prop[0] : message;
+    }
+    return prop ? prop : message;
+  }
 }

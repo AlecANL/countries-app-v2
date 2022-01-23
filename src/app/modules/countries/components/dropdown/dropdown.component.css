@@ -8,12 +8,14 @@
   items-center
   justify-between
   gap-4
+
   w-full;
 }
 
 .dropdown-button,
 .dropdown-options {
   @apply bg-white
+  text-charade
   rounded-md
   py-3
   px-6

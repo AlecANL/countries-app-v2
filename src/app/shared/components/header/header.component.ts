@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ThemeService } from '@core/services/theme.service';
 
 @Component({
@@ -6,14 +6,18 @@ import { ThemeService } from '@core/services/theme.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   constructor(private themeService: ThemeService) {}
 
   onToggleTheme() {
+    console.log(this.themeService.theme);
     this.themeService.toggleTheme();
   }
 
+  ngOnInit(): void {}
+
   get themeClass() {
-    return this.themeService.classTheme;
+    return '';
+    // return this.themeService.classTheme;
   }
 }
