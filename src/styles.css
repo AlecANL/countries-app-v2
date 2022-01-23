@@ -7,7 +7,7 @@
   mx-auto;
 }
 body {
-  @apply bg-light-bg font-nunito;
+  @apply font-nunito bg-light-bg transition-all;
 }
 .c-ellipsis {
   @apply text-ellipsis
@@ -15,6 +15,37 @@ body {
   overflow-hidden;
 }
 
-/* .flex-ellipsis {
-  @apply min-w-[.625rem];
-} */
+body .dark {
+  @apply bg-light-bg dark:bg-charade;
+}
+
+.dark button.dropdown-button {
+  @apply dark:bg-tuna text-white;
+}
+
+.dark ul.dropdown-options {
+  @apply dark:bg-tuna text-white;
+}
+
+.dark article.country-card {
+  @apply dark:bg-tuna text-white;
+}
+
+.dark form.form {
+  @apply dark:bg-tuna text-white;
+}
+
+.dark from.form input {
+  @apply dark:bg-tuna text-white placeholder:text-white;
+}
+
+.dark button.btn {
+  @apply dark:bg-tuna text-white;
+}
+
+.dark section.country {
+  @apply min-h-[28.125rem]
+  lg:overflow-hidden
+  dark:text-white
+  lg:pb-[122px];
+}

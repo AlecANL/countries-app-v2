@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { IDropDownState } from '@modules/countries/interfaces';
 
 @Component({
@@ -7,6 +7,7 @@ import { IDropDownState } from '@modules/countries/interfaces';
   styleUrls: ['./dropdown.component.css'],
 })
 export class DropDownComponent {
+  @Output() onSearchByRegion: EventEmitter<string> = new EventEmitter();
   private _state: IDropDownState = {
     isOpen: false,
   };
@@ -16,8 +17,8 @@ export class DropDownComponent {
     'africa',
     'oceania',
     'europe',
-    'asian',
-    'american',
+    'asia',
+    'americas',
   ];
 
   get isOpen() {
@@ -33,6 +34,8 @@ export class DropDownComponent {
 
   handleFilterCountry(country: string) {
     this._state = { ...this._state, isOpen: false };
+    const value = country.toLowerCase().trim();
+    this.onSearchByRegion.emit(value);
     console.log(country);
   }
 }

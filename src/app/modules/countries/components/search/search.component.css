@@ -13,6 +13,7 @@
 }
 input {
   @apply w-full;
+  background-color: transparent;
 }
 
 .form i {

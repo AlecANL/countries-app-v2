@@ -1,13 +1,15 @@
-<button [routerLink]="['']" class="btn">
-  <i class="icon-arrow-left"></i>
-  <span>Back</span>
-</button>
+<div class="content-button">
+  <button [routerLink]="['']" class="btn">
+    <i class="icon-arrow-left"></i>
+    <span>Back</span>
+  </button>
+</div>
 
-<section *ngIf="isLoading && isError">
+<section class="country" *ngIf="isLoading && isError">
   <h1>Whoops. cannot get country</h1>
 </section>
 
-<section *ngIf="isLoading && !isError">
+<section class="country" *ngIf="isLoading && !isError">
   <h1>Loading...</h1>
 </section>
 

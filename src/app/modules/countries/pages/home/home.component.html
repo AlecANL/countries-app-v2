@@ -5,12 +5,19 @@
     ariaLabel="Search any Country around the world"
     (onSearchCountry)="onFilter($event)"
   ></search>
-  <dropdown></dropdown>
+  <dropdown (onSearchByRegion)="onFilterRegion($event)"></dropdown>
 </div>
 
-<div class="countries-grid">
+<div
+  *ngIf="countriesSearched.length > 0; else noCountries"
+  class="countries-grid"
+>
   <country-card
     *ngFor="let country of countries"
     [country]="country"
   ></country-card>
 </div>
+
+<ng-template #noCountries>
+  <p>No countries Found :(</p>
+</ng-template>

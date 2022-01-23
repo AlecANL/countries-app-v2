@@ -13,11 +13,9 @@ export class FilterService {
     return {
       base: (filterBy: string, value: string) =>
         list.filter((n: any) => {
-          return n[filterBy] === value;
+          return n[filterBy].toLowerCase() === value;
         }),
       name: (name: string) => {
-        const x: any = list[0];
-        console.log(x['name']['common'].toLowerCase().includes('p'));
         return list.filter((n: any) =>
           n['name']['common'].toLowerCase().includes(name)
         );

@@ -26,3 +26,8 @@
   gap-2
   items-center;
 }
+
+.header.dark {
+  @apply dark:bg-tuna
+  dark:text-white transition-all;
+}

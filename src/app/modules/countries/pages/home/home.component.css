@@ -5,7 +5,10 @@
   mb-8
   mt-6
   md:flex-row
-  md:justify-between;
+  md:justify-between
+  md:my-0
+  md:pt-8
+  md:pb-6;
 }
 
 .countries-grid {

@@ -22,6 +22,16 @@ export class HomePageComponent {
     this.state = { ...this.state, searched_countries: [...countriesFiltered] };
   }
 
+  onFilterRegion(query: string) {
+    if (query === 'all') {
+      return this.handleFilterByCountryName([...this.state.countries]);
+    }
+    const x = this.filterService
+      .something([...this.state.countries])
+      .base('region', query);
+    this.handleFilterByCountryName(x);
+  }
+
   onFilter(query: string) {
     console.log(query);
     const x = this.filterService
@@ -31,6 +41,10 @@ export class HomePageComponent {
   }
 
   get countries() {
+    return [...this.state.searched_countries];
+  }
+
+  get countriesSearched() {
     return [...this.state.searched_countries];
   }
 }
