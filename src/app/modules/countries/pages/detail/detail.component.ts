@@ -58,21 +58,32 @@ export class DetailComponent implements OnInit {
     });
   }
 
-  deepInObj(obj: any): any {
+  deepInObj(
+    obj: { [key: string | number]: {} | string | number } | undefined,
+    view: 'all' | 'last' = 'last'
+  ): string[] {
     if (obj === null || obj === undefined) {
-      console.warn('cannot operate. this prop returns undefine or null');
-      return;
+      console.error(
+        `whoops: cannot operate on undefined | null type. needed an object`
+      );
+      return [];
     }
-    if (typeof obj === 'object') {
-      const keys: any[] = Object.keys(obj);
-      return keys.reduce((values: any[], currentKey: string) => {
-        const value = obj[currentKey];
-        if (typeof value === 'object') {
-          return [...values, this.deepInObj(value)];
-        }
-        console.log(values);
-        return [...values, value];
-      }, []);
+    if (typeof obj !== 'object') {
+      console.warn(
+        `whoops needed an object type. and you pass a ${typeof obj} type`
+      );
+      return [];
     }
+    const keys: string[] = Object.keys(obj);
+
+    return keys.reduce((prev: string[], currentKey: string) => {
+      const values = obj[currentKey];
+      if (typeof values === 'object') {
+        prev.push(...this.deepInObj(values));
+        return view === 'all' ? [...prev] : [prev[prev.length - 1]];
+      }
+      prev.push(values as string);
+      return view === 'all' ? prev : [prev[prev.length - 1]];
+    }, []);
   }
 }
