@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { listCountriesMocks } from '@core/mocks/list-countries.mock';
 import { ICountry } from '@core/models/country.interface';
+import { CountriesService } from '@core/services/countries.service';
 
 import { ICountryState } from '@modules/countries/interfaces';
 
@@ -19,6 +20,11 @@ export class DetailComponent implements OnInit {
     isError: null,
     error: null,
   };
+
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private countriesService: CountriesService
+  ) {}
 
   get country() {
     return { ...this.state.country };
@@ -45,12 +51,12 @@ export class DetailComponent implements OnInit {
   }
 
   private async _getCountries(query: string) {
-    const fakeCountry = this.countriesMocks.find((c) => c.cca2 === query);
-    const data = await this._loadCountries(fakeCountry);
-    this.state = { ...this.state, country: { ...data }, isLoading: false };
+    // const fakeCountry = this.countriesMocks.find((c) => c.cca2 === query);
+    // const data = await this._loadCountries(fakeCountry);
+    this.countriesService.getCountry(query).subscribe((data) => {
+      this.state = { ...this.state, country: { ...data[0] }, isLoading: false };
+    });
   }
-
-  constructor(private activeRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe(({ id }) => {

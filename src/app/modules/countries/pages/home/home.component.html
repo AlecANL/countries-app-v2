@@ -8,16 +8,21 @@
   <dropdown (onSearchByRegion)="onFilterRegion($event)"></dropdown>
 </div>
 
-<div
-  *ngIf="countriesSearched.length > 0; else noCountries"
-  class="countries-grid"
->
+<div *ngIf="isError">
+  <p>Whoops cannot get countries</p>
+</div>
+
+<div *ngIf="isLoading">
+  <p>Loading ...</p>
+</div>
+
+<div *ngIf="!isLoading && countriesSearched.length <= 0">
+  <p>Countries not found :(</p>
+</div>
+
+<div *ngIf="!isLoading && countriesSearched.length > 0" class="countries-grid">
   <country-card
     *ngFor="let country of countries"
     [country]="country"
   ></country-card>
 </div>
-
-<ng-template #noCountries>
-  <p>No countries Found :(</p>
-</ng-template>

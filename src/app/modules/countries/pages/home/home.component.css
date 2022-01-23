@@ -19,7 +19,8 @@
   sm:gap-x-[4.6875rem]
   sm:gap-y-[4.6875rem]
   md:grid-cols-3
-  lg:grid-cols-4;
+  lg:grid-cols-4
+  pb-6;
 }
 
 .countries-grid article {

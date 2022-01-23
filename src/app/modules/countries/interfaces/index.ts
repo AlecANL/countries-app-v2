@@ -6,6 +6,9 @@ export interface IDropDownState {
 export interface IHomeState {
   countries: ICountry[];
   searched_countries: ICountry[];
+  isError: null | boolean;
+  error: null | string;
+  isLoading: boolean;
 }
 
 export interface ICountryState {
