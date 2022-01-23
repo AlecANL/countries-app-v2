@@ -1,18 +1,27 @@
 import { Injectable } from '@angular/core';
 
+interface ISomething<T = any> {
+  base: (filterBy: string, value: string) => T[];
+  name: (value: string) => T[];
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class FilterService {
-  handleFilter<T = any>(listToFiltered: T[]) {
-    if (!Array.isArray(listToFiltered)) {
-      console.error('Whoops. This method needed a iterable object Array.');
-      return [];
-    }
-    const handle = {
+  something<T = any>(list: T[]): ISomething<T> {
+    return {
       base: (filterBy: string, value: string) =>
-        listToFiltered.filter((n: any) => n[filterBy] === value),
+        list.filter((n: any) => {
+          return n[filterBy] === value;
+        }),
+      name: (name: string) => {
+        const x: any = list[0];
+        console.log(x['name']['common'].toLowerCase().includes('p'));
+        return list.filter((n: any) =>
+          n['name']['common'].toLowerCase().includes(name)
+        );
+      },
     };
-    return handle;
   }
 }

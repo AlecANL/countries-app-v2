@@ -5,6 +5,7 @@ export interface IDropDownState {
 
 export interface IHomeState {
   countries: ICountry[];
+  searched_countries: ICountry[];
 }
 
 export interface ICountryState {

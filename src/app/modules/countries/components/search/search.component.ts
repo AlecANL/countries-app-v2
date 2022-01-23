@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'search',
@@ -8,4 +8,11 @@ import { Component, Input } from '@angular/core';
 export class SearchComponent {
   @Input() placeholder: string = '';
   @Input() ariaLabel: string = '';
+  @Output() onSearchCountry: EventEmitter<string> = new EventEmitter();
+  query: string = '';
+
+  handleSubmit() {
+    const value = this.query.toLowerCase().trim();
+    this.onSearchCountry.emit(value);
+  }
 }

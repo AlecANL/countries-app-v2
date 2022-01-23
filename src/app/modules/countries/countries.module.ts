@@ -8,6 +8,7 @@ import { SearchComponent } from './components/search/search.component';
 
 import { HomePageComponent } from './pages/home/home.component';
 import { DetailComponent } from './pages/detail/detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,6 @@ import { DetailComponent } from './pages/detail/detail.component';
     DetailComponent,
   ],
   exports: [],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
 })
 export class CountriesModule {}

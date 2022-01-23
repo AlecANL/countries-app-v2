@@ -1,9 +1,10 @@
-<form class="form" autocomplete="off">
+<form (ngSubmit)="handleSubmit()" class="form" autocomplete="off">
   <i class="icon-search"></i>
   <input
     type="search"
     name="search"
     id="search"
+    [(ngModel)]="query"
     attr.aria-label="{{ ariaLabel }}"
     [placeholder]="placeholder"
   />
